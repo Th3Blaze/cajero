@@ -1,0 +1,18 @@
+{% extends 'bases/base.html' %}
+{% block content %}
+{% include 'bases/barra.html' %}
+<div class="container mt-1 text-center">
+    <h1>Girar</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <h2 class="text-danger">{{mensaje}}</h2>
+        Su balance es : {{cuenta.balance}}
+        {{form.as_p}}
+        <button type="submit" class="btn btn-secondary">girar</button>
+    </form>
+    {% load static %}
+    <div class="container text-center">
+        <img src="{% static 'img/banco.jpeg' %}" alt="Mi imagen">
+    </div>
+</div>  
+{% endblock content %}

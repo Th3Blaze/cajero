@@ -1,0 +1,8 @@
+{% extends 'bases/base.html' %}
+{% block content %}
+<div class="container mt-1 text-center">
+    <h1>Ingreso a Cajero</h1>
+    <h2 class="text-danger">Se ha cerrado la session</h2>
+    <a href="{% url 'index' %}">Presione aca si desea volver a ingresar</a>
+</div>  
+{% endblock content %}

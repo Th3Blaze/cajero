@@ -1,0 +1,16 @@
+{% extends 'bases/base.html' %}
+{% block content %}
+{% if cuenta.sesion %}
+    {% include 'bases/barra.html' %}
+    Bienvenido al cajero 
+    <br>Su numero de cuenta es: {{id_nro_cta}}
+    <br>Su balance es :{{cuenta.balance}}
+    {% load static %}
+    <div class="container text-center">
+        <img src="{% static 'img/banco.jpeg' %}" alt="Mi imagen">
+    </div>
+{% else %}
+{{cuenta.nombre}}
+    <a href="{% url 'index' %}">Login</a>
+{% endif %}    
+{% endblock content %}  
